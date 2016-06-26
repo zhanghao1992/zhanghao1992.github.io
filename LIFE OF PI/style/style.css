@@ -1,0 +1,1784 @@
+body, ul, p, h1, h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: Arial;
+    color: #000;
+}
+body,html {
+	height: 100%;
+}
+body {
+	background: url(../icons/background-dark.jpg);
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    vertical-align: top;
+    border: none;
+}
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#music {
+	position: fixed;
+	left: 200px;
+	top: 0;
+	z-index: 200;
+	/*display: none;*/
+}
+
+#loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/loading/background.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 9999;
+    transition: .6s;
+    opacity: 1;
+}
+#loader .box {
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -75px 0 0 -75px;
+}
+#loader .animate {
+	position: relative;
+	transform: rotate(45deg);
+	/*border: 1px solid #fff;*/
+}
+#loader .animate div {
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+@keyframes move1{
+	50% {
+		transform: translate3d(-60px,-60px,0);
+	}
+}
+@keyframes move2{
+	50% {
+		transform: translate3d(0,-60px,0);
+	}
+}
+@keyframes move3{
+	50% {
+		transform: translate3d(60px,-60px,0);
+	}
+}
+@keyframes move4{
+	50% {
+		transform: translate3d(60px,0,0);
+	}
+}
+@keyframes move5{
+	50% {
+		transform: translate3d(60px,60px,0);
+	}
+}
+@keyframes move6{
+	50% {
+		transform: translate3d(0,60px,0);
+	}
+}
+@keyframes move7{
+	50% {
+		transform: translate3d(-60px,0,0);
+	}
+}
+@keyframes move8{
+	50% {
+		transform: translate3d(-60px,60px,0);
+	}
+}
+@keyframes move9{
+	50% {
+		transform: scale(1.3);
+	}
+}
+#loader .move1 {
+	animation: move1 infinite 2s;
+	animation-delay: 0.2s;
+}
+#loader .move2 {
+	animation: move2 infinite 2s;
+	animation-delay: 0.3s;
+}
+#loader .move3 {
+	animation: move3 infinite 2s;
+	animation-delay: 0.4s;
+	/*animation-play-state: paused;*/
+}
+#loader .move4 {
+	animation: move4 infinite 2s;
+	animation-delay: 0.5s;
+}
+#loader .move5 {
+	animation: move5 infinite 2s;
+	animation-delay: 0.6s;
+}
+#loader .move6 {
+	animation: move6 infinite 2s;
+	animation-delay: 0.7s;
+}
+#loader .move7 {
+	animation: move7 infinite 2s;
+	animation-delay: 0.8s;
+}
+#loader .move8 {
+	animation: move8 infinite 2s;
+	animation-delay: 0.9s;
+}
+#loader .move9 {
+	animation: move9 infinite 2s;
+	animation-delay: 0.2s;
+}
+#loader strong{
+	position: absolute;
+	left: 0;
+	bottom: -50%;
+	width: 100%;
+	line-height: 50px;
+	font-size: 50px;
+	color: #fff;
+}
+
+
+#topLeft, #topRight {
+    position: fixed;
+    z-index: 200;
+}
+#topLeft {
+    width: 70px;
+    height: 105px;
+    left: 0;
+    top: 40px;
+}
+#topRight {
+    width: 100px;
+    height: 100px;
+    right: 0;
+    top: 0;
+}
+#topLeft a, #topRight a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#topLeft a {
+    background: url(../icons/top-left.png) no-repeat;
+}
+#topRight a {
+    background: url(../icons/top-right.png) no-repeat;
+}
+
+
+ #wrap{
+ 	position: absolute;
+ 	left: 0;
+ 	top: 0;
+ 	transform: translate3d(-500%,0,0);
+    height: 100%;
+    width: 100%;
+} 
+
+#loading {
+    width: 100%;
+    height: 100%;
+    background: url(../images/loading/background.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+#loading .cover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url(../images/loading/cover.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+#loading .content {
+ 	position: absolute;
+	left: 0;
+	top: 130px;
+	width: 100%;
+	text-align: center;
+}
+#loading h1 {
+	margin:  30px auto;
+    border: 10px solid #fff;
+    width: 500px;
+    text-align: center;
+    color: #fff;
+    padding: 5px 15px;
+}
+#loading h1 p {
+    font-size: 50px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+}
+#loading h1 span {
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+    height: 30px;
+}
+#loading img {
+	margin:  0 auto;
+    width: 240px;
+}
+#loading .text1, #loading .text2,#loading .text3 {
+	margin:  10px auto;
+    width: 240px;
+    text-align: center;
+}
+#loading .text1 {
+    top: 364px;
+    color: #e6ebee;
+    font-size: 14px;
+}
+#loading .text2 {
+    top: 384px;
+    color: #b5bcc0;
+    font-size: 12px;
+}
+#loading .text3 {
+    word-spacing: 5px;
+    font-style: italic;
+    font-weight: 700;
+    top: 420px;
+    color: #3aa6b6;
+}
+#loading .arrow-down {
+   width: 33px;
+   margin: 30px auto;
+}
+#loading .arrow {
+    height: 45px;
+    background: url(../images/loading/arrow.png) no-repeat;;
+}
+#loading .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 20px 14px;
+
+}
+
+/* introduce */
+
+#introduce {
+    width: 100%;
+    background: url(../images/introduce/background.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#introduce .cover {
+	height: 100%;
+}
+#introduce .content1 {
+	transition: .5s;
+	opacity: 1;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    transform: translate3d(0,100px,0);
+    
+}
+#introduce .content1 p {
+	width: 800px;
+    font-size: 34px;
+    color: #fff;
+    line-height: 50px;
+    margin: 0 auto;
+}
+#introduce .content1 footer {
+    font-size: 16px;
+    color: #39c0d4;
+    line-height: 70px;
+    margin: 0 auto;
+}
+#introduce .content2 {
+	transition: .5s;
+	opacity: 0;
+    text-align: center;
+    width: 350px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    transform: translate3d(0,200px,0);
+}
+#introduce .content2 p {
+    font-family: Kalinga;
+    font-size: 14px;
+    width: 330px;
+    font-style: italic;
+    color: #fff;
+    line-height: 20px;
+    margin: 0 auto;
+}
+#introduce .content2 .arrow {
+    width: 33px;
+    height: 45px;
+    background: url(../images/loading/arrow.png) no-repeat;
+    margin: 20px auto;
+}
+
+/* waves */
+#waves {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#waves .cover {
+    height: 100%;
+}
+#waves .mask {
+    height: 100%;
+}
+#waves .mask1,#waves .mask2,#waves .mask3 {
+	transition: .5s;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#waves .mask img {
+	width: 100%;
+	transition: .5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#waves .mask3 {
+	height: 500px;
+}
+#waves .content {
+	width: 100%;
+	transition: .5s;
+	position: absolute;
+	opacity: 0;
+	left: 0;
+    top: 200px;
+    text-align: center;
+}
+#waves .content p {
+    color: #fff;
+    font-size: 40px;
+    width: 400px;
+    padding: 30px;
+    border: 10px solid #fff;
+    margin: 0 auto;
+}
+#waves .arrow {
+	width: 33px;
+	height: 45px;
+	background: url(../icons/arrow.png) no-repeat;
+	margin: 50px auto;
+}
+
+/* speator */
+
+#sperator {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#sperator .sL, #sperator .sR {
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    box-shadow:inset rgba(0,0,0,0.5) 0 0 15px 0;
+}
+#sperator img {
+    width: 100%;
+    height: 100%;
+	box-shadow:inset rgba(0,0,0,0.5) 0 0 15px 0;
+}
+#sperator .img1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#sperator .img2 {
+	transition: .5s;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 0;
+}
+#sperator .sR {
+    background: url(../images/seperator/00.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+#sperator .sR .img {
+    width: 100%;
+    height: 100%;
+}
+#sperator .sR img {
+	display: none;
+}
+
+/* drift */
+
+#drift {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#drift .cover {
+    height: 100%;
+    background: url(../icons/background.jpg);
+}
+#drift .swim {
+    position: relative;
+    height: 693px;
+    overflow: hidden;
+}
+#drift .swim .img1 {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}#drift .img1 img {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+#drift .swim img {
+    width: 100%;
+    height: 1000px;
+}
+#drift .swim .img2 {
+	width: 100%;
+	height: 0;
+	transition: .5s;
+	position: absolute;
+    left: 0;
+    bottom: 0px;
+}
+#drift .swim .imgBox {
+    border-top: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	position: relative;
+}
+#drift .imgBox img {
+	position: absolute;
+    left: 0;
+    bottom: 0px;
+	height: 1000px;
+	width: 100%;
+}
+#drift .img2 .up, #drift .img2 .down {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 23px;
+    position: absolute;
+    left: 30px;
+    color: #fff;
+}
+#drift .img2 .up {
+    background: url(../icons/arrow-up.png) no-repeat 0 16px;
+    top: -40px;
+}
+#drift .img2 .down {
+    background: url(../icons/arrow-down.png) no-repeat 0 16px;
+    top: 0px;
+}
+#drift .sideRight {
+    position: absolute;
+    perspective: 5000px;
+    transition: .5s;
+    top: 0;
+    right: -430px;
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective-origin: right;
+}
+#drift .box {
+    height: 643px;
+    width: 430px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: center center -215px;
+    transform: rotateY(0deg);
+    transition: .5s;
+}
+#drift .front {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: rgba(0,0,0,0.6) -2px 0 20px;
+}
+#drift .front .top {
+    background: url(../icons/background-light.jpg);
+    padding-bottom: 20px;
+}
+#drift .front h2 {
+    font-size: 24px;
+    line-height: 24px;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    border: 5px solid #fff;
+    margin: 50px 0 10px 60px;
+
+}
+#drift .front .text {
+    text-align: center;
+    color: #fff;
+    padding: 0 50px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 30px;
+}
+#drift .front img {
+    width: 262px;
+    height: 145px;
+    border: 2px solid #fff;
+    margin: 40px 0 0 80px;
+    box-shadow: rgba(0,0,0,0.6) -2px 0 20px;
+}
+#drift .front .bottom {
+    padding: 10px 0 30px 0;
+    height: 202px;
+    background: url(../icons/background-dark.jpg);
+    position: relative;
+   
+}
+#drift .before, #drift .after {
+    position: absolute;
+    top: 130px;
+    width: 120px;
+    padding: 0 10px;
+}
+#drift .before {
+    left: 10px;
+}
+#drift .front .number, #drift .front .number {
+    font-size: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+#drift .front .second, #drift .front .second {
+    height: 30px;
+    color: #aaa;
+    text-align: center;
+    background: #fff;
+    line-height: 30px;
+    font-size: 18px;
+}
+#drift .after {
+    right: 10px;
+}
+#drift .before .number {
+    color: #fff;
+}
+#drift .after .number {
+    color: #3aa6b6;
+}
+#drift .before .second {
+    color: #3aa6b6;
+    background: #fff;
+}
+#drift .after .second {
+    color: #fff;
+    background: #3aa6b6;
+}
+#drift .front .clock {
+    width: 79px;
+    height: 79px;
+    position: absolute;
+    left: 185px;
+    top: 130px;
+    background: url(../images/drift/side1/clock.png);
+}
+#drift .sideL {
+    width: 430px;
+    height: 100%;
+    position: absolute;
+    left: -430px;
+    top: 0;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+    box-shadow: rgba(0,0,0,0.6) -2px 0 20px;
+}
+#drift .sideL .top {
+    background: url(../icons/background-light.jpg);
+    padding-bottom: 20px;
+}
+#drift .sideL h2 {
+    font-size: 24px;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    border: 5px solid #fff;
+    margin: 50px 0 10px 60px;
+
+}
+#drift .sideL .text {
+    text-align: center;
+    color: #fff;
+    padding: 0 50px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 30px;
+}
+#drift .sideL img {
+    width: 309px;
+    height: 186px;
+    margin: 40px 0 0 70px;
+}
+#drift .sideL .bottom {
+    padding: 10px 0 30px 0;
+    height: 165px;
+    background: url(../icons/background-dark.jpg);
+    position: relative;   
+}
+#drift .sideL .number {
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    line-height: 110px;
+}
+#drift .sideL .gallons {
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+    line-height: 40px;
+    background: #3aa6b6;
+}
+
+#drift ul {
+    width: 70%;
+    padding: 50px 0;
+    overflow: hidden;
+}
+#drift li {
+    margin: 62px 0 0 20%;
+    width: 56%;
+    position: relative;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
+}
+#drift li img {
+    width: 100%;
+    height: 100%;
+    
+}
+#drift li .videoBg {
+	width: 62px;
+	height: 62px;
+	background: url(../icons/play.png) no-repeat;
+	position: absolute;
+	cursor: pointer;
+	left: 230px;
+	top: 115px;
+}
+#drift li p {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	line-height: 30px;
+	height: 30px;
+	overflow: hidden;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+	background: rgba(0,0,0,.7);
+}
+
+/*storm*/
+
+#storm {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	transition: .5s;
+	transform: translate3d(0,100%,0);
+}
+#storm .mask1 img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#storm .mask1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#storm .mAfter1 {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 0;
+	transition: .5s;
+}
+#storm .mAfter1 .imgBox {
+    border-top: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	position: relative;
+}
+#storm .mAfter1 img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#storm .mAfter1 .up, #storm .mAfter1 .down {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 23px;
+    position: absolute;
+    left: 30px;
+    color: #fff;
+}
+#storm .mAfter1 .up {
+    background: url(../icons/arrow-up.png) no-repeat 0 16px;
+    top: -40px;
+}
+#storm .mAfter1 .down {
+    background: url(../icons/arrow-down.png) no-repeat 0 16px;
+    top: 0px;
+}
+#storm .text1 {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+}
+#storm .text1 h2 {
+	margin: 0 auto;
+	background: rgba(0,0,0,0.5);
+	width: 310px;
+	line-height: 30px;
+	padding: 15px;
+	border: 5px solid #fff;
+	font-weight: 700;
+	font-size: 30px;
+	color: #fff;
+}
+#storm .text1 p {
+	margin: 0 auto;
+	padding: 30px 10px 10px 10px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	color: #fff;
+	width: 380px;
+}
+#storm .mask2 img {
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#storm .mask2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate3d(100%,0,0);
+	width: 100%;
+	height: 100%;
+	transition: .5s;
+}
+#storm .mAfter2 {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	transition: .5s;
+}
+#storm .mAfter2 .imgBox {
+    border-left: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	position: relative;
+}
+#storm .mAfter1 img {
+	width: 100%;
+}
+#storm .mAfter2 .up, #storm .mAfter2 .down {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    color: #fff;
+}
+#storm .mAfter2 .up {
+	padding-left: 23px;
+    background: url(../icons/arrow-right.png) no-repeat 0 14px;
+    left: 10px;
+}
+#storm .mAfter2 .down {
+	padding-right: 23px;
+    background: url(../icons/arrow-left.png) no-repeat right 14px;
+    left: -105px;
+}
+#storm .text2, #storm .text3 {
+	height: 60px;
+	padding: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background: url(../icons/background.jpg);
+}
+#storm .text2 p, #storm .text3 p {
+	width: 600px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	color: #fff;
+	margin-left: 350px;
+}
+#storm .mask3 img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#storm .mask3 {
+	transition: .5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	transform: translate3d(100%,0,0);
+}
+
+/*tiger*/
+
+#tiger {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#tiger .cover {
+    height: 100%;
+    background: url(../images/tiger/background02.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+#tiger .mask {
+	z-index: 3;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+}
+#tiger .mask1,#tiger .mask2,#tiger .mask3 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	transition: .5s;
+}
+#tiger .mask img {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: .5s;
+}
+#tiger .content {
+	z-index: 3;
+	transition: .5s;
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+    top: 200px;
+    text-align: center;
+}
+#tiger .content p {
+	display:inline-block;
+    color: #fff;
+    font-size: 40px;
+    padding: 30px;
+    border: 10px solid #fff;
+    margin: 0 auto;
+}
+#tiger .arrow {
+	width: 33px;
+	height: 45px;
+	background: url(../icons/arrow.png) no-repeat;
+	margin: 80px auto;
+}
+#tiger .king {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	height: 200%;
+	width: 100%;
+	z-index: 1;
+	transition: .5s;
+}
+#tiger .king .tiger {
+	position: absolute;
+	left: -800px;
+	top: 50px;
+	z-index: 2;
+}
+#tiger .tiger img{
+	border: 4px solid #fff;
+	box-shadow: rgba(0,0,0,0.7) 0 0 11px;
+	transform: rotateZ(-5deg);
+}
+#tiger .king .symbol {
+	position: absolute;
+	right: -800px;
+	top: 70px;
+	z-index: 1;
+}
+#tiger .symbol img{
+	border: 4px solid #fff;
+	box-shadow: rgba(0,0,0,0.7) 0 0 11px;
+	transform: rotateZ(8deg);
+}
+#tiger .content1,#tiger .content2,#tiger .content3 {
+	/*display: none;*/
+	width: 450px;
+	position: absolute;
+	left: 0px;
+    width: 100%;
+    opacity: 0;
+    z-index: 3;
+   	text-align: center;
+   	display: block;
+   	text-align: center;
+}
+#tiger .content1 h2,#tiger .content2 h2, #tiger .content3 h2 {
+    color: #444;
+    font-weight: normal;
+    font-size: 30px;
+    padding: 20px 30px;
+    border: 4px solid #444;
+    margin: 0 auto;
+    display: inline-block;
+    margin: 0 auto;
+}#tiger .content1 p{
+	width: 380px;
+}
+#tiger .content1 p, #tiger .content2 p, #tiger .content3 p {
+	text-align: center;
+    color: #444;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 30px;
+    margin: 0 auto;
+}
+#tiger .content2 p, #tiger .content3 p {
+	width: 420px;
+}
+#tiger .compare {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 67%;
+    transition: .5s;
+}
+#tiger .compare img {
+	width: 220%;
+	height: 120%;
+	position: absolute;
+	top: -10px;
+	display: none;
+}
+#tiger .circle1, #tiger .circle2 {
+	border: 4px solid #fff;
+	width: 46%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow: rgba(0,0,0,0.7) 0 0 11px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+#tiger .circle1 {
+	left: 0;
+}
+#tiger .circle2 {
+	right: 0;
+}
+#tiger .circle2 img{
+	right: -5px;
+}
+#tiger .filter {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#tiger .filter p {
+	text-align: center;
+	width: 120px;
+	font-size: 20px;
+	color: #fff;
+	border: 4px solid #fff;
+	padding: 10px;
+	margin: 180px auto;
+}
+#tiger .virtual {
+	position: absolute;
+	left: 0px;
+	bottom: -100%;
+	width: 100%;
+}
+#tiger .virtual img {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+/* island */
+
+#island {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#island .floor1 {
+	transition: .5s;
+   	position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+#island .mask1,#island .mask2,#island .mask3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: .5s;
+}
+#island .floor1 img {
+    width: 100%;
+    transition: .5s;
+}
+#island .floor1 .mask3, #island .floor1 .mask2 {
+    height: 100%;
+    transition: .5s;
+}
+#island .floor1 .content {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    text-align: center;
+    opacity: 0;
+}
+#island .floor1 .content p {
+	margin: 0 auto;
+	width: 600px;
+    color: #fff;
+    font-size: 40px;
+    padding: 30px 15px;
+    border: 10px solid #fff;
+}
+#island .floor1 .arrow {
+	margin: 30px auto;
+    width: 33px;
+    height: 45px;
+    background: url(../icons/arrow.png) no-repeat;
+}
+#island .floor2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+#island .floor2 img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#island .floor3 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/island/background.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+#island .floor3 .content {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    opacity: 0;
+}
+#island .floor3 h2 {
+    color: #fff;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 28px;
+    padding: 20px 20px;
+    border: 4px solid #fff;
+    margin: 120px auto 0px;
+}
+#island .floor3 p {
+    text-align: center;
+    color: #fff;
+    width: 300px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 30px;
+    margin: 0 auto;
+}
+#island .floor3 .right, #island .floor3 .left {
+    width: 50%;
+    height: 0;
+    transition: .5s;
+    position: absolute;
+    overflow: hidden;
+}
+#island .floor3 .left {
+	left: 0;
+    bottom: 0;
+}#island .floor3 .right {
+	left: 50%;
+    bottom: 50%;
+}
+#island .floor3 .box2, #island .floor3 .box3 {
+    height: 100%;
+    width: 0;
+    transition: .5s;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+#island .floor3 .img2, #island .floor3 .img3 {
+    width: 674px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#island .top, #island .bottom {
+    height: 0;
+    width: 100%;
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+}
+#island .top {
+    bottom: 50%;
+}
+#island .bottom {
+   bottom: 0; 
+}
+#island .lBox {
+    width: 70%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+#island .lBox div {
+	transition: .5s;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+}
+#island .lBox img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#island .rBox {
+    position: relative;
+    float: right;
+    width: 30%;
+    height: 100%;
+    background: url(../icons/background-light.jpg);
+}
+#island .bottom .rBox {
+    background: url(../icons/background-dark.jpg);
+}
+#island .rBox .content {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+#island .video {
+	transition: .5s;
+    position: absolute;
+    transform: translate3d(100%,0,0);
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+#island .video img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#island .videoBg, #whale .videoBg{
+	width: 62px;
+	height: 62px;
+	background: url(../icons/play.png) no-repeat;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -31px 0 0 -31px;
+	cursor: pointer;
+}
+#island .video strong, #whale .video strong {
+	position: absolute;
+	left: 0;
+	top: 60%;
+	width: 100%;
+	font-size: 24px;
+	color: #fff;
+	font-weight: normal;
+	text-align: center;
+}
+/*whale*/
+
+#whale {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+#whale .floor1 {
+	width: 100%;
+	height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+}
+#whale .mask1,#whale .mask2,#whale .mask3 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	transition: .5s;
+}
+#whale .floor1 img {
+	width: 100%;
+	transition: .5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#whale .floor1 .content {
+	position: absolute;
+	opacity: 0;
+	left: 0;
+    top: 200px;
+    width: 100%;
+    text-align: center;
+}
+#whale .floor1 .content p {
+	margin: 0 auto;
+	width: 600px;
+    color: #fff;
+    font-size: 40px;
+    padding: 30px;
+    border: 10px solid #fff;
+}
+#whale .floor1 .arrow {
+	width: 33px;
+	height: 45px;
+	margin: 50px auto;
+	background: url(../icons/arrow.png) no-repeat;
+}
+#whale .floor2 {
+	background: #000;
+	position: absolute;
+	transition: .5s;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#whale .floor2 .content {
+	text-align: center;
+}
+#whale .floor2 h2 {
+	color: #fff;
+	display: inline-block;
+    font-weight: normal;
+    font-size: 30px;
+    padding: 20px 30px;
+    border: 4px solid #fff;
+    margin: 120px auto 0px;
+}
+#whale .floor2 p {
+	text-align: center;
+    color: #fff;
+    width: 300px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 30px;
+    margin: 0 auto;
+}
+#whale .floor2 .img {
+	transition: .5s;
+	height: 70%;
+}
+#whale .floor2 img {
+	height: 100%;
+}
+#whale .floor3 {
+	transform: translate3d(0,50%,0);
+	position: absolute;
+	transition: .5s;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#whale .floor3 .content {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#whale .floor3 h2 {
+	color: #fff;
+	display: inline-block;
+    font-weight: normal;
+    font-size: 30px;
+    padding: 20px 30px;
+    border: 4px solid #fff;
+    margin: 120px auto 0px;
+}
+#whale .floor3 p {
+	text-align: center;
+    color: #fff;
+    width: 400px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 30px;
+    margin: 0 auto;
+}
+#whale .floor3 img {
+	transition: .5s;
+	width: 100%;
+}
+#whale .floor3 .video {
+	transform: translate3d(100%,0,0);
+	position: absolute;
+	transition: .5s;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+#whale .video img {
+	transition: .5s;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+/*end*/
+
+#end {
+	transform: translate3d(0,50%,0);
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: .5s;
+	width: 100%;
+	height: 100%;
+}
+#end img {
+	width: 100%;
+	transition: .5s;
+}
+
+/*video*/
+#video {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+	z-index: 200;
+	display: none;
+}
+#video video {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -300px 0 0 -400px;
+	/*border: 4px solid #fff;*/
+}
+#video .close {
+	position: absolute;
+	cursor: pointer;
+	right: 150px;
+	top: 50px;
+	width: 62px;
+	height: 62px;
+	background: url(../icons/close.png) no-repeat;
+}
+/* buy */
+
+#buy {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+	left: 0;
+	top: 0;
+	transition: .5s;
+    transform: translate3d(0,170%,0);
+    position: relative;
+    margin-bottom: 34px;
+    background: url(../icons/background-dark.jpg);
+}
+#buy .top {
+	width: 800px;
+	height: 130px;
+	position: absolute;
+	left:0;
+	top: -130px;
+}
+#buy .tLeft {
+	float: left;
+	padding-top: 10px;
+}
+#buy .tLeft img {
+    width: 240px;
+    padding-left: 10px;
+}
+#buy .text1, #buy .text2 {
+    width: 280px;
+    text-align: center;
+}
+#buy .text1 {
+    color: #e6ebee;
+    font-size: 16px;
+}
+#buy .text2 {
+    color: #b5bcc0;
+    font-size: 14px;
+}
+#buy .tRight {
+	width: 400px;
+	float: right;
+}
+#buy .tRight .p1 {
+	line-height: 30px;
+}
+#buy .tRight .p2 {
+	text-align: center;
+	font-size: 28px;
+	padding: 15px 0;
+	border: 4px solid #fff;
+	color: rgb(57,192,212);
+}
+#buy .tRight b, #buy .tRight span{
+	font-size: 18px;
+	color: #fff;
+}
+#buy .left, #buy .right {
+    width: 77px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#buy .left {
+    left: 0;
+    background: url(../images/buy/left.png) repeat-y;
+    
+}
+#buy .left div {
+    height: 100%;
+    background: url(../images/buy/corner-left.png) no-repeat left bottom;
+}
+#buy .right {
+    right: 0;
+    background: url(../images/buy/right.png) repeat-y right top;
+}
+#buy .right div {
+    height: 100%;
+    background: url(../images/buy/corner-right.png) no-repeat left bottom;
+}
+#buy .bottom {
+    width: 100%;
+    height: 66px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../images/buy/middle.png) repeat-x;
+}
+#buy .bottom .shadow {
+	width: 788px;
+	height: 18px;
+	margin: 24px auto;
+	background: url(../images/buy/shadow.png) no-repeat;
+}
+#buy ul {
+	width: 60%;
+	margin: auto;
+}
+#buy li {
+    float: left;
+    width: 210px;
+    margin: 32px;
+    text-align: center;
+}
+#buy li img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#buy a {
+    float: left;
+}
+#buy .buyBtn {
+    display: inline-block;
+    width: 168px;
+    text-align: center;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 17px;
+    margin-top: 17px;
+    color: #fff;
+    background-image: linear-gradient(#1985a0,#074555);
+}
+#buy .buyBtn:hover {
+    background-image: linear-gradient(#074555,#1985a0);
+}
+#buy .buyBtn sup {
+    font-size: 12px;
+}
+#buy .iBtn {
+   padding: 3px 9px;
+   background-image: linear-gradient(#687678,#444d4e);
+   border-radius: 11px;
+   margin: 24px 0 0 11px;
+}
+#buy .iBtn img {
+    width: 7px;
+    height: 16px;
+}
+#buy .iBtn:hover {
+    background-image: linear-gradient(#444d4e,#687678);
+}
+#buy .download {
+	position: absolute;
+	color: #fff;
+	height: 38px;
+}
+#buy .download p {
+	color: #fff;
+	float: left;
+	font-size: 24px;
+	line-height: 38px;
+	font-weight: 700;
+
+}
+#buy .download a {
+	color: #fff;
+	width: 310px;
+	margin-left: 10px;
+	padding: 0 10px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 18px;
+	border-radius: 19px;
+	background-image: linear-gradient(#1985a0,#074555);
+}
+#buy .btn:hover {
+    background-image: linear-gradient(#074555,#1985a0);
+}
+#buy .download img {
+	margin-top: 10px;
+}
+
+
+
+/* foot */
+#foot {
+    width: 100%;
+    height: 34px;
+    background-image: linear-gradient(#fcfcfc,#dfdfdf);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /*z-index: 999;*/
+}
+#foot img {
+    position: absolute;
+}
+#foot .img1 {
+    left: 33px;
+    top: 7px;
+    width: 66px;
+    height: 23px;
+}
+#foot .img2 {
+    left: 240px;
+    bottom: 0;
+    width: 78px;
+    height: 49px;
+}
+#foot .img3 {
+    right: 83px;
+    top: 7px;
+    width: 50px;
+    height: 25px;
+}
+#foot .img4 {
+    right: 30px;
+    top: 6px;
+    width: 36px;
+    height: 25px;
+}
+#foot .text {
+    width: 90px;
+    color: #3aa6b6;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 5px 0 0 130px;
+}
+#foot ul {
+    display: inline-block;
+    margin: 6px 0 0 560px;
+}
+#foot li {
+    float: left;
+}
+#foot li a {
+    padding: 0 10px;
+    line-height: 26px;
+    color: #767676;
+    border-right: 1px solid #666;
+}
+#foot li a:hover {
+    text-decoration: underline;
+}
